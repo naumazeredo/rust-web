@@ -15,7 +15,10 @@ async fn main() {
     let routes = filters::get_patient_filters(db);
     let routes = routes.with(warp::trace::request());
 
+    let port = std::env::var("PORT")
+        .map_or(5000u16, |s| s.parse::<u16>().unwrap());
+
     warp::serve(routes)
-        .run(([127, 0, 0, 1], 3030))
+        .run(([0, 0, 0, 0], port))
         .await;
 }
