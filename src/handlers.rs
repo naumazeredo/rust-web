@@ -1,5 +1,5 @@
 use std::sync::atomic::Ordering;
-use crate::models::{Database, Patient};
+use models::{Database, Patient};
 use warp::http;
 
 pub async fn list_patients(

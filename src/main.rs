@@ -1,4 +1,4 @@
-mod models;
+//mod models;
 mod filters;
 mod handlers;
 
@@ -12,7 +12,9 @@ async fn main() {
 
     let db = Database::new();
 
-    let routes = filters::get_patient_filters(db);
+    let routes = warp::get().and(warp::path::end()).and(warp::fs::file("frontend/static/index.html"));
+    let routes = routes.or(warp::path("static").and(warp::fs::dir("frontend/static")));
+    let routes = routes.or(filters::get_patient_filters(db));
     let routes = routes.with(warp::trace::request());
 
     let port = std::env::var("PORT")
