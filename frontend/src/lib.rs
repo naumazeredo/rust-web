@@ -10,5 +10,3 @@ use pages::Home;
 pub fn run_app() {
     App::<Home>::new().mount_to_body();
 }
-
-// --
