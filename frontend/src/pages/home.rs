@@ -22,13 +22,19 @@ impl Component for Home {
 
     fn view(&self) -> Html {
         html! {
-            <div class="container">
+            <>
+            <header>
                 <Navbar />
-                <div>
+            </header>
+            <main class="container">
+                <div class="section">
                     <span>{ "Home" }</span>
                     <Button>{ "Test" }</Button>
                 </div>
-            </div>
+            </main>
+            <footer>
+            </footer>
+            </>
         }
     }
 }

@@ -44,8 +44,8 @@ impl Component for Navbar {
         // { self.props.children.render() }
 
         html! {
-            <nav>
-                <div class="nav-wrapper">
+            <nav class="top-nav">
+                <div class="container nav-wrapper">
                     <a href="#" class="brand-logo">{ "Logo" }</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="#">{ "Sass " }</a></li>
